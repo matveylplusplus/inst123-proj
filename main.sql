@@ -1,7 +1,8 @@
+CREATE DATABASE musik;
+
 CREATE TABLE genres (
-    genre_name text,
-    genre_desc text,
-    CONSTRAINT genres_key PRIMARY KEY (genre_name)
+    genre_name TEXT CONSTRAINT genres_key PRIMARY KEY,
+    genre_desc TEXT
 );
 
 INSERT INTO genres (genre_name, genre_desc) 
