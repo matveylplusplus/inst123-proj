@@ -19,7 +19,10 @@ CREATE TABLE releases (
   peak_chart_pos_us INT CHECK (peak_chart_pos_us > 0),
   peak_chart_pos_uk INT CHECK (peak_chart_pos_uk > 0),
   am_rating NUMERIC(2,1) CHECK (am_rating BETWEEN 0 AND 5),
-  rym_rating NUMERIC(3,2) CHECK (rym_rating BETWEEN 0 AND 5)
+  rym_rating NUMERIC(3,2) CHECK (rym_rating BETWEEN 0 AND 5),
+  pitchfork_rating NUMERIC (3,1) CHECK (pitchfork_rating BETWEEN 0 AND 10),
+  gram_nom BOOLEAN,
+  gram_win BOOLEAN
 );
 
 INSERT INTO genres (genre_name, genre_desc) VALUES
@@ -34,10 +37,13 @@ INSERT INTO genres (genre_name, genre_desc) VALUES
 INSERT INTO releases
 (title, artist, type, track_count, duration, release_date, 
 genre, peak_chart_pos_us, peak_chart_pos_uk, am_rating, 
-rym_rating) VALUES
+rym_rating, pitchfork_rating, gram_nom, gram_win) VALUES
   ('The Dark Side of the Moon', 'Pink Floyd', 'Album', 
-  10, '00:42:50', '1973-03-23', 'rock', 1, 2, 5.0, 4.23),
+  10, '00:42:50', '1973-03-23', 'rock', 1, 2, 5.0, 4.23,
+  9.3, FALSE, FALSE),
   ('Worlds', 'Porter Robinson', 'Album', 12, '00:57:49', 
-  '2014-08-12', 'dance/electronic', 18, 13, 4.0, 3.55),
+  '2014-08-12', 'dance/electronic', 18, 13, 4.0, 3.55,
+  6.9, FALSE, FALSE),
   ('Certified Lover Boy', 'Drake', 'Album', 21, '01:26:02',
-  '2021-09-03', 'hip-hop/rap', 1, 1, 2.5, 1.78);
+  '2021-09-03', 'hip-hop/rap', 1, 1, 2.5, 1.78, 6.6, 
+  FALSE, FALSE);
