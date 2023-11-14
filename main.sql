@@ -1,2 +1,12 @@
--- wow! look at this epic project
 CREATE DATABASE musik;
+
+CREATE TABLE genres (
+    genre_name TEXT CONSTRAINT genres_key PRIMARY KEY,
+    genre_desc TEXT
+);
+
+INSERT INTO genres (genre_name, genre_desc) 
+    VALUES
+        ('rock', 'a type of popular dance music originating in the 1950s, characterized by heavy beats and uncomplicated melodies; rock first emerged as a fusion between R&B and country music'),
+        ('dance/electronic', 'a broad genre of percussive electronic music intended for dancing; originally made for nightclubs, raves, and festivals'),
+        ('hip-hop/rap', 'a genre of music characterized primarily by a strong, rhythmic beat and rapping vocals');
