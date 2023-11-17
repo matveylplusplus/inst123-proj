@@ -32,14 +32,14 @@ CREATE TABLE releases (
 );
 
 CREATE TABLE songs (
-    song_title TEXT,
-    track_num INT CHECK (track_num > 0),
-	artist_name TEXT,
+	song_title TEXT,
+   	track_num INT CHECK (track_num > 0),
 	release_title TEXT,
-    PRIMARY KEY(artist_name, release_title, track_num),
+	artist_name TEXT,
+    	PRIMARY KEY (artist_name, release_title, track_num),
 	FOREIGN KEY (artist_name, release_title) REFERENCES releases(artist_name, release_title),
-    duration TIME,
-    total_spotify_plays INT CHECK (total_spotify_plays >= 0)
+    	duration INTERVAL,
+    	total_spotify_plays INT CHECK (total_spotify_plays >= 0)
 );
 
 INSERT INTO genres (genre_name, genre_desc) 
