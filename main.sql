@@ -1,3 +1,4 @@
+-- create database query should be run separately from other database setup code
 CREATE DATABASE musik;
 
 CREATE TYPE ATYPE AS ENUM
